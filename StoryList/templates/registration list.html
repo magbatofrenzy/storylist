@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+<title>Story Registration List</title>
+
+</head>  
+<body>  
+    <center> <h1>Story Registration List</h1> </center> 
+    <form method="POST" action="/StoryList/{{ list.id }}/add_item">
+        
+
+   
+
+
+    
+    <label for="synopsis">Synopsis:<lable></lable>
+    <input type="text" id="nsynopsis" name="nsynopsis" placeholder ="Summary"><br><br>
+    
+
+            <button type="submit" id="btnEnter" name="btnEnter"style="font-size: 20px;">Enter</button> 
+           
+        
+        {% csrf_token %}
+    </form>  
+    
+    <table id="listTable" name=tr>
+      {% for item in list.item_set.all %}
+        <tr>
+        
+        <td>{{ item.nSynopsis }}</td>
+      
+          
+    
+        
+        </tr>
+         {% endfor %}
+    </table>
+
+</body>   
+</html>
+
+ 
