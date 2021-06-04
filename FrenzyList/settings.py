@@ -25,7 +25,7 @@ SECRET_KEY = 'd6e4(f46)wc%(&+$@3vxokugcu*__gnf)eu%e+h2ui4%#sn4y('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ohublist.ph']
+ALLOWED_HOSTS = ['storylist.ph']
 
 
 # Application definition
