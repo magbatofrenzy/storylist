@@ -1,34 +1,68 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from StoryList.models import Item, List
+from StoryList.models import Reader, Category
 
 
 def home_page(request):
-    items = Item.objects.all()
-    return render(request, 'homepage.html',{'items' : items})
+    readers= Reader.objects.all()
+    return render(request, 'homepage.html',{'readers' : readers})
     
 
 
-def view_list(request, list_id):
-    list_ = List.objects.get(id=list_id)
-    return render(request, 'registration list.html', {'list': list_})
+def view_reader(request, reader_id):
+    reader_ = Reader.objects.get(id=reader_id)
+    return render(request, 'registration reader.html', {'reader': reader_})
 
 
-def new_list(request):
-    list_ = List.objects.create()
-    Item.objects.create(ngender=request.POST['Cgname'],nname =request.POST['rname'],nCategory=request.POST['ncategory'],nTitle =request.POST['ntitle'],nAuthor=request.POST['nauthor'],list=list_)
-    return redirect(f'/StoryList/{list_.id}/')
+def new_reader(request):
+    reader_ = Reader.objects.create()
+    #Reader.objects.create(Name=request.POST['rname'],Gender =request.POST['F/M'])
+    return redirect(f'/StoryList/{reader_.id}/')
 
-def add_item(request, list_id):
-    list_ = List.objects.get(id=list_id)
-    Item.objects.create(nSynopsis=request.POST['nsynopsis'],list=list_) 
-    return redirect(f'/StoryList/{list_.id}/')
-
-
-
+def add_item(request, reader_id):
+    reader_ = Reader.objects.get(id=id_reader)
+    #Category.objects.create(nSynopsis=request.POST['nsynopsis'],reader=list_) 
+    return redirect(f'/StoryList/{reader_.id}/')
 
 
 
+#def dataManipulation(request):
+    #Creating an entry
+    #Reader = (Reader= 'Frenzy Camille Magbato', Gender='Female',Category='Fairytale', Author='Jacob Grimm', Condition='old reader', Remarks='finished')
+    #reader.save()
+
+    #Read All Entries
+    #objects = reader.objects.all
+    #result = 'Printing all entries in reader model : <br>'
+   # for x in objects:
+            #res +.Choices+'<br>'
+
+    #Read a specific entry:
+    #name = reader.objects.get()
+    #res += 'printing one entry  <br>'
+    #res += reader.Name
 
 
+    #Delete an entry
+    #res += '<br> Deleting an entry <br>'
+    #name.delete()
+
+    #Update
+    #Reader = reader(Name='Carolyn Quillope', Gender='Female', Category='Adventure', Author='Nicholas Monsarrat', Condition='new reader', Remarks= 'unfinished')
+    #reader.save()
+    #res += 'Updating entry <br>'
+
+    #reader = Reader.objects.get(reader = Carolyn Quillope)
+    #reader. CChoices = "Adventure"
+    #reader.save()
+    #res = ""
+
+    #Filtering data:
+    #qs = Reader.objects.filter(Reader = Carolyn Quillope)
+   # res += "new reader: %s results <br>" %len(qs)
+
+    #Ordering results:
+    #qs = Reader.objects.order_by('Remarks')
+    #for x in qs:
+            #res += xReader + x.Remarks +'<br>'
 

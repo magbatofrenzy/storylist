@@ -14,9 +14,9 @@
 
 
     
-    <label for="synopsis">Synopsis:<lable></lable>
-    <input type="text" id="nsynopsis" name="nsynopsis" placeholder ="Summary"><br><br>
-    
+    <label for="Category">:<lable></lable>
+    <input type="text" id="ncategory" name="ncategory" placeholder ="Fill Here"><br><br>
+    <input type="text" id="nreader" name="nreader" placeholder="Write Here"><br><br>
 
             <button type="submit" id="btnEnter" name="btnEnter"style="font-size: 20px;">Enter</button> 
            
@@ -24,18 +24,8 @@
         {% csrf_token %}
     </form>  
     
-    <table id="listTable" name=tr>
-      {% for item in list.item_set.all %}
-        <tr>
-        
-        <td>{{ item.nSynopsis }}</td>
-      
-          
     
-        
-        </tr>
-         {% endfor %}
-    </table>
+    
 
 </body>   
 </html>

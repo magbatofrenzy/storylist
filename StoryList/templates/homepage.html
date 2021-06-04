@@ -6,42 +6,24 @@
 
 </head>  
 <body>  
-    <center> <h1>Story Registration List</h1> </center> 
+    <center> <h1>Story List</h1> </center> 
     <form method="POST" action="/StoryList/new">
         
 
 	 
 
 
-    <label for="gender">Choosen Gender:</label><br>
-    <input type="gender" id="Cgname" name="Cgname" placeholder="Write Here!"><br>
-    <label for="reader">Reader:</label><br>
-    <input type="text" id="rname" name="rname" placeholder="Fill Here"><br>
-    <label for="category">Category:</label><br>
-    <input type="text" id="ncategory" name="ncategory" placeholder="Fill Title Here"><br><br>
-    <label for="title">Title:<label></label>
-    <input type="text" id="ntitle" name="ntitle" placeholder="Enter Title Here"><br><br>
-    <label for="autor">Author:<lable></lable>
-    <input type="text" id="nauthor" name="nauthor" placeholder="Writers Name"><br><br>
-    
+    <label for="Reader">UReader:</label><br>
+    <input type="Name" id="rname" name="rname" placeholder="Write Here!"><br>
+    <label for="Gender">UGender:</label><br>
+    <input type="text" id="Gender" name="Gender" placeholder="F/M"><br><br>
 
-            <button type="submit" id="btnEnter" name="btnEnter"style="font-size: 16px;">Enter</button> 
+
+            <button type="submit" id="btnEnter">Enter</button> 
            
         
         {% csrf_token %}
     </form>  
-    <table id="listTable" name=tr>
-      {% for item in list.item_set.all %}
-        <tr>
-        
-        <td>{{ item.ngender }}</td>
-      
-          <td>{{ item.nCategory}}</td>
-    
-        
-        </tr>
-         {% endfor %}
-    </table>
 
 </body>   
 </html>

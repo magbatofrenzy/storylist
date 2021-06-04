@@ -32,57 +32,20 @@ class PageTest(LiveServerTestCase):
 		header_text = self.browser.find_element_by_tag_name('h1').text
 		self.assertIn('Story Registration List', header_text)
 		
-		inputgender = self.browser.find_element_by_id ('Cgname')
-		self.assertEqual(inputgender.get_attribute ('placeholder'),'Write Here!')
-		inputgender.click()
-		time.sleep(1)
-		inputgender.send_keys ('Female')
+		inputbox1 = self.browser.find_element_by_id('rname')
+		self.assertEqual(inputbox1.get_attribute('placeholder'),'Write Here!')
+		inputbox1.send_keys('Frenzy Magbato')
 		time.sleep(1)
 
-		inputreader = self.browser.find_element_by_id('rname')
-		self.assertEqual(inputreader.get_attribute('placeholder'),'Fill Here')
-		inputreader.click()
-		time.sleep(1)
-		inputreader.send_keys('Frenzy Camille Magbato')
+		inputbox2 = self.browser.find_element_by_id('Gender')
+		self.assertEqual(inputbox2.get_attribute('placeholder'),'F/M')
+		inputbox2.send_keys('Female')
 		time.sleep(1)
 
-		inputcategory= self.browser.find_element_by_id('ncategory')
-		self.assertEqual(inputcategory.get_attribute('placeholder'),'Fill Title Here')
-		inputcategory.click()
-		time.sleep(1)
-		inputcategory.send_keys('FairyTale')
-		time.sleep(1)
 
-		inputtitle = self.browser.find_element_by_id('ntitle')
-		self.assertEqual(inputtitle.get_attribute('placeholder'),'Enter Title Here')
-		inputtitle.click()
-		time.sleep(1)
-		inputtitle.send_keys('Snow White and the Seven Dwarfs')
-		time.sleep(1)
-
-		inputauthor = self.browser.find_element_by_id('nauthor')
-		self.assertEqual(inputauthor.get_attribute('placeholder'), 'Writers Name')
-		inputauthor.click()
-		time.sleep(1)
-		inputauthor.send_keys('Jacob Grimm')
-		time.sleep(1)
-
-		btnEnter = self.browser.find_element_by_id('btnEnter')
-		btnEnter.click()
+		btnSubmit = self.browser.find_element_by_id('btnEnter')
+		btnSubmit.click()
 		time.sleep(2)
-
-		inputsynopsis = self.browser.find_element_by_id('nsynopsis')
-		self.assertEqual(inputsynopsis.get_attribute('placeholder'),'Summary')
-		inputsynopsis.click()
-		time.sleep(1)
-		inputsynopsis.send_keys('They lived happily ever after!')
-		time.sleep(1)
-
-		btnEnter = self.browser.find_element_by_id('btnEnter')
-		btnEnter.click()
-		time.sleep(2)
-
-
 
 	
 
