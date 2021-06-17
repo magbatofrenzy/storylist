@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--code by codingflicks.com-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Background HTML CSS | No javascript</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+        
+    body
+    {
+        font-family: Century Gothic;
+        background-color:lightblue;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    
+    header {
+        background-color: violet;
+    }
+ 
+    header ul li {
+        display: inline-block;
+        padding:40px;
+    }
+ 
+    header li a {
+        color: #00008B;
+        text-decoration: none;
+        font-weight: bolder;
+        padding-left: 50px;
+
+    }
+</style>
+</head>
+<body>
+<div class="homepage">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>List</li>
+            
+        <ul>
+
+        <h2>Story List</h2>
+
+</div>
+ <form method="POST" action="/page2/">
+
+  <label for="Reader">Name:</label><br>
+  <input type="text" id="name" name="name" placeholder="Write Here"><br>
+  <label for="Gender">Gender:</label><br>
+  <input type="text" id="Gender" name="Gender" placeholder= "F/M"><br>
+  {% csrf_token %}
+
+  <input 
+  type="submit" 
+  id="submit"
+  name="submit"
+  size="5"
+  value="submit"
+  />
+
+ </form>   
+</body>
+</html>

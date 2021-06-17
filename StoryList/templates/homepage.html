@@ -1,28 +1,68 @@
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html>
 <head>
+<style>
+body {
+  background-color: lightblue;
+}
 
-<title>Story Registration List</title>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #444;
+}
 
-</head>  
-<body>  
-    <center> <h1>Story List</h1> </center> 
-    <form method="POST" action="/StoryList/new">
-        
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: violet;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#list">List</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+ <center> <h1>Story List</h1> </center> 
 
 	 
 
-
-    <label for="Reader">UReader:</label><br>
-    <input type="Name" id="rname" name="rname" placeholder="Write Here!"><br>
-    <label for="Gender">UGender:</label><br>
-    <input type="text" id="Gender" name="Gender" placeholder="F/M"><br><br>
-
+ <label for="Reader">Name:</label><br>
+  <input type="text" id="name" name="name" placeholder="Write Here"><br>
+  <label for="Gender">Gender:</label><br>
+  <input type="text" id="Gender" name="Gender" placeholder= "F/M"><br>
+  <label for= "Category">Category:</label><br>
+  <input type="text" id="nCategory" name="nCategory" placeholder="Type Here"><br>
+  <label for="List">List:</label><br>
+  <input type="text" id="List" name="List" placeholder="Write Here"><br>
+  <label for="Date">Date:</label><br>
+  <input type="text" id="Date" name="Date" placeholder="mm/dd/yyyy"><br>
+  <label for="Content">content:</label><br>
+  <input type="text" id="Content" placeholder="Fill Here!"><br>
+  <label for="Remarks">Remarks:</label><br>
+  <input type="text" id="Remarks" placeholder="Record Here"><br>
+    
 
             <button type="submit" id="btnEnter">Enter</button> 
            
         
-        {% csrf_token %}
+    
     </form>  
 
 </body>   

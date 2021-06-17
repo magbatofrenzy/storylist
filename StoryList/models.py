@@ -11,35 +11,32 @@ class Reader(models.Model):
 
 class Category(models.Model):
 	nCategory = models.TextField(default='')
-	reader = models.ForeignKey(Reader, default=None, on_delete=models.PROTECT)
+	NewReader = models.ForeignKey(Reader, default=None, on_delete=models.PROTECT)
 	
 	class meta: 	
 		db_table = "category"
   	       
-#class Content(models.Model):
-	#nTitle = models.TextField(default='')
-	#nSynopsis = models.TextField(default='')
-	#nStory = models.TextField(default='')
-	#nAuthor = models.TextField(default='')
-	#category = models.ForeignKey(Category, default=None, on_delete=models.PROTECT)
+class Stories(models.Model):
+	nTitle = models.TextField(default='')
+	nAuthor = models.TextField(default='')
+	Category = models.ForeignKey(Category, default=None, on_delete=models.PROTECT)
     	
-	#class meta:
-		#db_table = "content"
+	class meta:
+		db_table = "stories"
      
-#class List(models.Model):
-	#nread = models.DateTimeField(default='')          
-	#nDate = models.DateTimeField(default='')    
-	#content = models.ForeignKey(Content, default=None, on_delete=models.PROTECT)
+class List(models.Model):
+	nread = models.DateTimeField(default='')             
+	Condition = models.ForeignKey(Stories, default=None, on_delete=models.PROTECT)
 	
-	#class meta:
-    		#db_table = "list"
+	class meta:
+    		db_table = "list"
 
-#class Remarks(models.Model):
-	#nremarks = models.TextField(default='')
-	#content = models.ForeignKey(Content, default=None, on_delete=models.PROTECT)
+class Remarks(models.Model):
+	finished = models.TextField(default='')
+	unfinished = models.ForeignKey(List, default=None, on_delete=models.PROTECT)
 	
-	#class meta: 	
-		#db_table = "Feedback"
+	class meta: 	
+		db_table = "remarks"
 
 
 '''
