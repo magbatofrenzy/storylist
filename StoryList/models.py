@@ -3,8 +3,9 @@ from django.db import models
 
 
 class Reader(models.Model):
-	Name = models. TextField(default='')
-	Gender = models.TextField(default='')
+	nName = models. TextField(default='')
+	nGender = models.TextField(default='')
+	nAge =models.TextField(default='')
 	
 	class meta:
 		db_table = "reader"
@@ -12,7 +13,7 @@ class Reader(models.Model):
 class Category(models.Model):
 	nCategory = models.TextField(default='')
 	NewReader = models.ForeignKey(Reader, default=None, on_delete=models.PROTECT)
-	
+
 	class meta: 	
 		db_table = "category"
   	       
@@ -25,7 +26,7 @@ class Stories(models.Model):
 		db_table = "stories"
      
 class List(models.Model):
-	nread = models.DateTimeField(default='')             
+	Newreader = models.DateTimeField(default='')             
 	Condition = models.ForeignKey(Stories, default=None, on_delete=models.PROTECT)
 	
 	class meta:

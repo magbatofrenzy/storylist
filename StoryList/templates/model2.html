@@ -1,62 +1,155 @@
-<!DOCTYPE html>
-<!--code by codingflicks.com-->
-<html lang="en">
+<HTML>
+<header>
+    <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animated Background HTML CSS | No javascript</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Story List</title>
+    <link href="style.css" link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Viaoda+Libre&display=swap" rel="stylesheet"> 
+</head>
+    <div class="wrapper">
+        
 <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+header{
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(https://images.squarespace-cdn.com/content/v1/52ede6d4e4b079642247cb6f/1392015726173-YQHMD0AKTDTO2RQ6UZBS/ke17ZwdGBToddI8pDm48kLHeGLzNDDQ8-q1X0MBy9kwUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2djDBwcm45SlGIbRfgJ8UFPQCkvl3gQv0bs6pS3n9LPQxOpYghpI-Ha_TwZsqqmJXng/Open-book-on-green-background.jpg?format=1500w);
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.nav-area{
+    float: right;
+    list-style: none;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+.nav-area li{
+    display: inline-block;
+}
+.nav-area li a {
+color: #fff;
+text-decoration: none;
+padding: 5px 20px;
+font-family: poppins;
+font-size: 20px;
+text-transform: uppercase;
+}
+.nav-area li a:hover{
+    background: #fff;
+    color: #333;
+}
+.logo{
+    float: left;
+}
+.logo img{
+    width: 100%;
+    padding: 15px 0;
+}
+.welcome-text{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 20% 30%;
+    text-align: center;
+}
+.welcome-text h1{
+    text-align: center;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-family: 'Viaoda Libre', cursive;
+    text-transform: uppercase;
+    font-size: 80px;
+}
+.welcome-text h2{
+    color:white;
+    font-family: 'Viaoda Libre', cursive;
+    font-size: 20px;
+}
+.welcome-text a{
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+}
+.welcome-text a:hover{
+    background: #fff;
+    color: #333;
+}
 
- body
-    {
-        font-family: Century Gothic;
-        background-color:lightblue;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    
-    header {
-        background-color: violet;
-    }
- 
-    header ul li {
-        display: inline-block;
-        padding:40px;
-    }
- 
-    header li a {
-        color: #00008B;
-        text-decoration: none;
-        font-weight: bolder;
-        padding-left: 50px;
+/*resposive*/
 
-    }
+@media (max-width:600px){
+    .wrapper {
+width: 100%;
+}
+.logo {
+float: none;
+width: 50%;
+text-align: center;
+margin: auto;
+}
+img {
+width: ;
+}
+.nav-area {
+float: none;
+margin-top: 0;
+}
+    .nav-area li a {
+padding: 5px;
+font-size: 11px;
+}
+.nav-area {
+text-align: center;
+}
+    .welcome-text {
+width: 100%;
+height: auto;
+margin: 30% 0;
+}
+    .welcome-text h1 {
+font-size: 30px;
 }
 </style>
-</head>
-<body>
-<div class="homepage">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>List</li>
-            
-        <ul>
-
-        <h2>Story List</h2>
-
-</div>
  <form method="POST" action="/page3/">
+        </div>
+<ul class="nav-area">
+<li><a href="/home">Home</a></li>
+<li><a href="/about">ABOUT</a></li>
+</ul>
+</div>
+
+<div class="welcome-text">
+
+
+    <h1>STORY LIST</h1>
 
   
-  <label for= "Category">Category:</label><br>
-  <input type="text" id="nCategory" name="nCategory" placeholder="Type Here"><br>
-  <label for="NewReader">NewReader:</label><br>
-  <input type="text" id="NewReader" name="NewReader" placeholder="Right Here"><br>
+<label for= "Category">Category:</label><br>
+<input type="text" id="nCategory" name="nCategory" placeholder="Type Here"><br>
+<label for="NewReader">NewReader:</label><br>
+<input type="text" id="NewReader" name="NewReader" placeholder="Right Here"><br>
 
-  {% csrf_token %}
-  <input 
+
+<input 
   type="submit" 
   id="submit"
   name="submit"
@@ -64,6 +157,21 @@
   value="submit"
   />
 
+</div>
+{% csrf_token %}
+
  </form>   
 </body>
 </html>
+
+
+<form method="POST" action="/{{ Category.id }}/Category_id">
+
+{% for Category in Reader.reader_set.all %}
+        <tr>
+            <!{{ forloop.counter }}:  -->
+            <td>{{ forloop.counter }} : {{category.reader }}</td>
+            <td>{{ Category.nCategory }}</td>
+            <td>{{ NewReader.NewReader }}</td>
+        
+        </tr> {% endfor %} </table>

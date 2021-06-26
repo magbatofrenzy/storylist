@@ -1,10 +1,10 @@
 <HTML>
 <header>
-    <html lang="en">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Story List</title>
-    <link href="style.css" link rel="preconnect" href="https://fonts.gstatic.com">
+<meta charset="UTF-8">
+<title>Story List</title>
+<link href="style.css" link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet"> 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Viaoda+Libre&display=swap" rel="stylesheet"> 
@@ -28,7 +28,7 @@ header{
     height: 100vh;
     -webkit-background-size: cover;
     background-size: cover;
-    background-position: center center;
+    background-position:center;
     position: relative;
 }
 .nav-area{
@@ -129,50 +129,24 @@ margin: 30% 0;
 font-size: 30px;
 }
 </style>
-
-<form method="POST" action="/page2/">
-
+        
 <ul class="nav-area">
-<li><a href="/home">Home</a></li>
-<li><a href="/about">ABOUT</a></li>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
 </ul>
 
-<div class="welcome-text">
 
-        <h1>STORY LIST</h1>
+ <h1>
+ Good day, Welcome to my site! <br><br>
 
+    Technology is innovating , and it has a big source in our daily lives it connects us. <br>
+    In my site you can visit and click for the easy story access information.<br>
 
-<label for="Reader">nName:</label><br>
-<input type="text" id="name" name="name" placeholder="Write Here"><br>
-<label for="Gender">nGender:</label><br>
-<input type="text" id="Gender" name="Gender" placeholder= "F/M"><br>
-<label for="Age">nAge:</label><br>
-<input type="text" id="Age" name="Age" placeholder="Type here"><br>
-
-<input 
-  type="submit" 
-  id="submit"
-  name="submit"
-  size="5"
-  value="submit"
-  />
-
+        Frenzy Camille <br>
+            Founder
+</h1>
 </div>
-{% csrf_token %}
+</header>
 </form>   
 </body>
 </html>
-
-<!-- <form method="POST" action="/new_reader"> --> --> --> -->
-
-
-        <!-- <tr> {% for redear in readers %} -->
-            
-            <!-- <td> <a href=StoryList/{{reader.id}}>{{reader.rID}}</a></td> -->
-            <!-- <td>{{reader.nName}}</td> -->
-            <!-- <td>{{reader.nGender}}</td> -->
-            <!-- <td>{{reader.nAge}}</td> -->
-            
-        <!-- </tr> {% endfor %} -->
-
-

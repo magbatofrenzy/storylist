@@ -1,156 +1,161 @@
-<!DOCTYPE html>
-<!--code by codingflicks.com-->
-<html lang="en">
+<HTML>
+<header>
+    <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animated Background HTML CSS | No javascript</title>
-  <style>
-  {
+    <title>Story List</title>
+    <link href="style.css" link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Viaoda+Libre&display=swap" rel="stylesheet"> 
+</head>
+    <div class="wrapper">
+        
+<style>
+*{
     margin: 0;
     padding: 0;
 }
-body {
-    font-family: lato;
+body{
+    font-family: 'Lato', sans-serif;
 }
-.homepage {
-    width: 100%;
-    position: absolute;
-    z-index: 1000;
+.wrapper{
+    width: 1170px;
+    margin: auto;
 }
-.homepage ul {
-    height: 50px;
+header{
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(https://images.squarespace-cdn.com/content/v1/52ede6d4e4b079642247cb6f/1392015726173-YQHMD0AKTDTO2RQ6UZBS/ke17ZwdGBToddI8pDm48kLHeGLzNDDQ8-q1X0MBy9kwUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2djDBwcm45SlGIbRfgJ8UFPQCkvl3gQv0bs6pS3n9LPQxOpYghpI-Ha_TwZsqqmJXng/Open-book-on-green-background.jpg?format=1500w);
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.nav-area{
     float: right;
+    list-style: none;
+    margin-top: 50px;
     margin-right: 50px;
 }
-.homepage ul li {
+.nav-area li{
     display: inline-block;
-    padding: 40px 15px;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 25px;
-    cursor: pointer;
-    font-weight: 900;
 }
-.homepage h2 {
+.nav-area li a {
+color: #fff;
+text-decoration: none;
+padding: 5px 20px;
+font-family: poppins;
+font-size: 20px;
+text-transform: uppercase;
+}
+.nav-area li a:hover{
+    background: #fff;
+    color: #333;
+}
+.logo{
+    float: left;
+}
+.logo img{
+    width: 100%;
+    padding: 15px 0;
+}
+.welcome-text{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 20% 30%;
     text-align: center;
-    color: #fff;
-    font-size: 65px;
-    margin-top: 20%;
+}
+.welcome-text h1{
+    text-align: center;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-family: 'Viaoda Libre', cursive;
     text-transform: uppercase;
-    font-weight: 900;
+    font-size: 80px;
 }
-.boxes {
-    background: linear-gradient(to top, #2c3e50 0%, #fd746c 100%);
-    width: 100%;
-    height: 100vh;
+.welcome-text h2{
+    color:white;
+    font-family: 'Viaoda Libre', cursive;
+    font-size: 20px;
 }
-.single-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.welcome-text a{
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
 }
-.single-box li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 25px;
-    height: 25px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 20s linear infinite;
-    bottom: -150px;
+.welcome-text a:hover{
+    background: #fff;
+    color: #333;
 }
-.single-box li:nth-child(1) {
-    left: 86%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
+
+/*resposive*/
+
+@media (max-width:600px){
+    .wrapper {
+width: 100%;
 }
-.single-box li:nth-child(2) {
-    left: 12%;
-    width: 30px;
-    height: 30px;
-    animation-delay: 1.5s;
-    animation-duration: 10s;
+.logo {
+float: none;
+width: 50%;
+text-align: center;
+margin: auto;
 }
-.single-box li:nth-child(3) {
-    left: 29%;
-    width: 100px;
-    height: 100px;
-    animation-delay: 5.5s;
+img {
+width: ;
 }
-.single-box li:nth-child(4) {
-    left: 42%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 15s;
+.nav-area {
+float: none;
+margin-top: 0;
 }
-.single-box li:nth-child(5) {
-    left: 65%;
-    width: 40px;
-    height: 40px;
-    animation-delay: 0s;
+    .nav-area li a {
+padding: 5px;
+font-size: 11px;
 }
-.single-box li:nth-child(6) {
-    left: 15%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3.5s;
+.nav-area {
+text-align: center;
 }
-.single-box li:nth-child(7) {
-    left: 75%;
-    width: 200px;
-    height: 200px;
-    animation-delay: 4.5s;
-    bottom: -250px;
+    .welcome-text {
+width: 100%;
+height: auto;
+margin: 30% 0;
 }
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-800px) rotate(360deg);
-        opacity: 0;
-    }
+    .welcome-text h1 {
+font-size: 30px;
 }
 </style>
-</head>
-<body>
-<div class="homepage">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>List</li>
-            
-        <ul>
-
-        <h2>Story List</h2>
-
 </div>
- <form method="POST" action="/page5/">
+<ul class="nav-area">
+<li><a href="/home">Home</a></li>
+<li><a href="/about">ABOUT</a></li>
+</ul>
 
-  <label for="List">List:</label><br>
-  <input type="text" id="list" name="list" placeholder="Write Here"><br>
-  <label for="nread">nread:</label><br>
-  <input type="text" id="nread" name="nread" placeholder= "Write Here"><br>
-  <label for= "Date">Date:</label><br>
-  <input type="text" id="Date" name="Date" placeholder="mm/dd/yyyy"><br>
-  <label for="content">content:</label><br>
-  <input type="text" id="content" name="content" placeholder="Fill Here!"><br>
- 
-{% csrf_token %}
- <input 
+
+<div class="welcome-text">
+
+    <h1>STORY LIST</h1>
+
+<label for="List">List:</label><br>
+<input type="text" id="list" name="list" placeholder="Write Here"><br>
+<label for="nread">Newreader:</label><br>
+<input type="text" id="Newreader" name="Newreader" placeholder= "Write Here"><br>
+<label for="Condition">Condition:</label><br>
+<input type="text" id="condition" name="Condition" placeholder="Fill Here!"><br>
+<input 
   type="submit" 
   id="submit"
   name="submit"
   size="5"
   value="submit"
   />
+</div>
 
+{% csrf_token %}
  </form>   
 </body>
 </html>
