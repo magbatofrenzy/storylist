@@ -29,39 +29,39 @@ def  page5(request):
     return render(request, 'model5.html')
 
 
-def MainPage(request): Reader
-    nName = nName.objects.all()
-    return render(request, 'model1.html',{'nName' : nName})
-def new_reader(request): Reader
+# def MainPage(request): Reader
+    # nName = nName.objects.all()
+    # return render(request, 'model1.html',{'nName' : nName})
+# def new_reader(request): Reader
     
-    newreader_ = Reader.objects.create(nName =request.POST['name'],nGender=request.POST['Gender'],nAge=request.POST['Age'])
-    return redirect(f'/{newreader_.id}/')
+    # newreader_ = Reader.objects.create(nName =request.POST['name'],nGender=request.POST['Gender'],nAge=request.POST['Age'])
+    # return redirect(f'/{newreader_.id}/')
 
-def view_reader(request, reader_id):  Category
-    nCategory_ = nCategory.objects.get(id=nCategory_id)
-    return render(request, 'model2.html', {'reader': reader_})
+# def view_reader(request, reader_id):  Category
+    # nCategory_ = nCategory.objects.get(id=nCategory_id)
+    # return render(request, 'model2.html', {'reader': reader_})
 
-def add_info(request, reader_id):   Category
-    reader_ = Reader.objects.get(id=reader_id)    
-    Category.objects.create(nCategory=request.POST['nCategory'],NewReader=request.POST['NewReader'])
-    return redirect(f'{reader_.id}/')    
+# def add_info(request, reader_id):   Category
+    # reader_ = Reader.objects.get(id=reader_id)    
+    # Category.objects.create(nCategory=request.POST['nCategory'],NewReader=request.POST['NewReader'])
+    # return redirect(f'{reader_.id}/')    
 
-def edit(request, id):
-    reader =  Reader.objects.get(id=id)
-    context = {'reader':readers }
-    return render(request, 'edit.html', context)
+# def edit(request, id):
+    # reader =  Reader.objects.get(id=id)
+    # context = {'reader':readers }
+    # return render(request, 'edit.html', context)
 
-def update(request, id):
-    reader = nName = request.POST['name']
-    reader = nGender = request.POST['Gender']
-    reader = nAge = request.POST['Age']
-    reader.save()
-    return redirect('/')
+# def update(request, id):
+    # reader = nName = request.POST['name']
+    # reader = nGender = request.POST['Gender']
+    # reader = nAge = request.POST['Age']
+    # reader.save()
+    # return redirect('/')
 
-def delete(request, id);
-    reader =  Reader.objects.get(id=id)
-    redear.delete()
-    return redirect('/')
+# def delete(request, id);
+    # reader =  Reader.objects.get(id=id)
+    # redear.delete()
+    # return redirect('/')
 
 
 

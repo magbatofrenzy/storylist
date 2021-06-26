@@ -129,26 +129,23 @@ margin: 30% 0;
 font-size: 30px;
 }
 </style>
-
-<form method="POST" action="/page2/">
-
+</div>
 <ul class="nav-area">
 <li><a href="/home">Home</a></li>
 <li><a href="/about">ABOUT</a></li>
 </ul>
 
+
 <div class="welcome-text">
 
-        <h1>STORY LIST</h1>
+    <h1>STORY LIST</h1>
 
-
-<label for="Reader">nName:</label><br>
-<input type="text" id="name" name="name" placeholder="Write Here"><br>
-<label for="Gender">nGender:</label><br>
-<input type="text" id="Gender" name="Gender" placeholder= "F/M"><br>
-<label for="Age">nAge:</label><br>
-<input type="text" id="Age" name="Age" placeholder="Type here"><br>
-
+<label for="List">List:</label><br>
+<input type="text" id="list" name="list" placeholder="Write Here"><br>
+<label for="nread">Newreader:</label><br>
+<input type="text" id="Newreader" name="Newreader" placeholder= "Write Here"><br>
+<label for="Condition">Condition:</label><br>
+<input type="text" id="condition" name="Condition" placeholder="Fill Here!"><br>
 <input 
   type="submit" 
   id="submit"
@@ -156,23 +153,9 @@ font-size: 30px;
   size="5"
   value="submit"
   />
-
 </div>
+
 {% csrf_token %}
-</form>   
+ </form>   
 </body>
 </html>
-
- <!-- <form method="POST" action="/new_reader"> --> --> --> --> -->
-
-
-        <!-- <tr> {% for redear in readers %} -->
-            
-            <!-- <td> <a href=StoryList/{{reader.id}}>{{reader.rID}}</a></td> -->
-            <!-- <td>{{reader.nName}}</td> -->
-            <!-- <td>{{reader.nGender}}</td> -->
-            <!-- <td>{{reader.nAge}}</td> -->
-            
-        <!-- </tr> {% endfor %} -->
-
-
