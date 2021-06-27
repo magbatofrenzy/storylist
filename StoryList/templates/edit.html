@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: lightgrey;
+  color: blue;
+}
+​
+h1 {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+​
+<form method="POST" action="update/{{ readers.id }}">
+        {% csrf_token %}
+        
+            
+            <input type="txt" name="rname" value="{{ readers.nName }}" required="required"/>
+
+             
+            <input type="txt" name="Gender" value="{{ readers.ngGender }}" required="required"/>
+            
+  	     
+            <input type="txt" name="Age" value="{{ readers.nAge }}" required="required"/>
+
+
+	    
+
+         
+            <button type="submit">Update</button>
+</body>
+</html>

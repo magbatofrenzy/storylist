@@ -13,55 +13,48 @@ def home(request):
 def about(request):
     return render(request, 'ABOUT.html')
     
-def  page1(request):
-    return render(request, 'model1.html')
+def  page12(request):
+    return render(request, 'model1-2.html')
 
-def  page2(request):
-    return render(request, 'model2.html')
-
-def  page3(request):
-    return render(request, 'model3.html')
-
-def  page4(request):
-    return render(request, 'model4.html')
-
-def  page5(request):
-    return render(request, 'model5.html')
+def  page345(request):
+    return render(request, 'model3,4&5.html')
 
 
-# def MainPage(request): Reader
-    # nName = nName.objects.all()
-    # return render(request, 'model1.html',{'nName' : nName})
-# def new_reader(request): Reader
-    
-    # newreader_ = Reader.objects.create(nName =request.POST['name'],nGender=request.POST['Gender'],nAge=request.POST['Age'])
-    # return redirect(f'/{newreader_.id}/')
 
-# def view_reader(request, reader_id):  Category
-    # nCategory_ = nCategory.objects.get(id=nCategory_id)
-    # return render(request, 'model2.html', {'reader': reader_})
+def home_page(request):
+    readers = Reader.objects.all()
+    return render(request, 'model1-2.html',{'readers' : readers})
 
-# def add_info(request, reader_id):   Category
+def new_reader(request):
+    newreader_ = Reader.objects.create(nName =request.POST['rname'],nGender=request.POST['Gender'],nAge=request.POST['Age'])
+    return redirect(f'/{newreader_.id}/view_reader')
+
+def view_reader(request, reader_id):
+    reader_ = Reader.objects.get(id=reader_id)
+    return render(request, 'model3,4&5.html', {'reader': reader_})
+
+def new_category(request, reader_id):
     # reader_ = Reader.objects.get(id=reader_id)    
-    # Category.objects.create(nCategory=request.POST['nCategory'],NewReader=request.POST['NewReader'])
-    # return redirect(f'{reader_.id}/')    
+    # Category.objects.create(nCategory=request.POST['ccategory'])
+    return redirect('/')
+    
+def edit(request, id):
+    readers =  Reader.objects.get(id=id)
+    context = {'readers':readers }
+    return render(request, 'edit.html', context)
 
-# def edit(request, id):
-    # reader =  Reader.objects.get(id=id)
-    # context = {'reader':readers }
-    # return render(request, 'edit.html', context)
+def update(request, id):
+    reader =  Reader.objects.get(id=id)
+    reader.nName = request.POST['rname']
+    reader.nGender = request.POST['Gender']
+    reader.nAge = request.POST['Age']
+    reader.save()
+    return redirect('/')
 
-# def update(request, id):
-    # reader = nName = request.POST['name']
-    # reader = nGender = request.POST['Gender']
-    # reader = nAge = request.POST['Age']
-    # reader.save()
-    # return redirect('/')
-
-# def delete(request, id);
-    # reader =  Reader.objects.get(id=id)
-    # redear.delete()
-    # return redirect('/')
+def delete(request, id):
+    reader =  Reader.objects.get(id=id)
+    reader.delete()
+    return redirect('/')
 
 
 

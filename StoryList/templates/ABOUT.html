@@ -1,83 +1,353 @@
-<HTML>
+<html>
+
 <header>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Story List</title>
-<link href="style.css" link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet"> 
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Viaoda+Libre&display=swap" rel="stylesheet"> 
-</head>
-    <div class="wrapper">
-        
-<style>
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    font-family: 'Lato', sans-serif;
-}
-.wrapper{
-    width: 1170px;
-    margin: auto;
-}
-header{
-    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(https://images.squarespace-cdn.com/content/v1/52ede6d4e4b079642247cb6f/1392015726173-YQHMD0AKTDTO2RQ6UZBS/ke17ZwdGBToddI8pDm48kLHeGLzNDDQ8-q1X0MBy9kwUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2djDBwcm45SlGIbRfgJ8UFPQCkvl3gQv0bs6pS3n9LPQxOpYghpI-Ha_TwZsqqmJXng/Open-book-on-green-background.jpg?format=1500w);
-    height: 100vh;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position:center;
-    position: relative;
-}
-h3 {
-    text-align: center;
-    color: white;
-    padding-top: 200px;
-}
-.nav-area{
-    float: right;
-    list-style: none;
-    margin-top: 50px;
-    margin-right: 50px;
-}
-.nav-area li{
-    display: inline-block;
-}
-.nav-area li a {
-color: #fff;
-text-decoration: none;
-padding: 5px 20px;
-font-family: poppins;
-font-size: 20px;
-text-transform: uppercase;
-}
-.nav-area li a:hover{
-    background: #fff;
-    color: #333;
-}
-
-
-</style>
-        
-<ul class="nav-area">
-<li><a href="/home">Home</a></li>
-<li><a href="/about">About</a></li>
-</ul>
-
-
- <h3>
- Good day, Welcome to my site! <br><br>
-
-    Technology is innovating , and it has a big source in our daily lives it connects us. <br>
-    In my site you can visit and click for the easy story access information.<br>
-
-        Frenzy Camille <br>
-            Founder
-</h3>
-</div>
+  <a href="">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/95802/Geenay-logo.png" alt="">
+  </a>
+  <nav>
+    <a href="home/">home</a>
+    <a href="" class="current" >about</a>
+    <a href="page1/">work</a>
+  </nav>
 </header>
-</form>   
-</body>
-</html>
+<style>
+/* GLOBAL */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Mukta Mahee', sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+ul { 
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+li { 
+  margin-bottom: 5px;
+}
+
+
+/* ----- MENU -------- */ 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header img {
+  max-width: 40px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repat(4, auto);
+  grid-gap:5vw;
+}
+
+header a {
+  font-size: 13px;
+  color: #01263B;
+  text-decoration:none;
+}
+
+.current {
+  color: #FF87A3;  
+
+}
+
+@media all and (min-width:500px) {
+  header img {
+    max-width: 60px;
+  }
+  
+    header a {
+    font-size: 16px;
+  }
+}
+
+/*---------- Landing Page -----------*/
+.landing-hero-wrapper  {
+  padding: 0;
+}
+
+.landinghero {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+/* pink background */
+.landinghero-bg {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* header and image */
+.landinghero-content {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    width: calc(100% - 40px); /* 100% minus the padding on sides) */
+    max-width: 900px;
+    justify-self: center;
+    margin: 50px 0;
+}
+
+.landinghero-content h1 {
+  /* font-size: 96px; */
+  font-size: calc(0.5rem + 10vmin);
+  margin:0;
+  line-height: 0.5;
+  grid-row: 1;
+}
+
+.landinghero-content h2 {
+  /* font-size: 72px; */
+  font-size: calc(0.5rem + 9vmin);
+  margin:0;
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+
+.landinghero-content span {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  grid-row: 2;
+  margin-bottom: 100px;
+}
+
+.landinghero-content h3 {
+  /* font-size: 28px; */
+  font-size: calc(0.5rem + 2vmin);
+  line-height: 0.5;
+  font-family: 'Alegreya', serif;
+  justify-self: end;
+  width:70%;
+  text-align: right;
+}
+
+.landinghero-content span hr {
+  position: relative;
+  border: 0;
+  height: 1px;
+  background: black;
+}
+
+.landinghero-content img {
+  width: 70%;
+  max-width: 400px;
+  justify-self: end;
+  grid-column: 1;
+  grid-row: 3
+}
+
+/* Arrow end */
+.landinghero-content span hr:after {
+  position: absolute;
+  left: -23px;
+  top: -10px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  transform: rotateZ(-45deg);
+} 
+
+.landing-bottomleft_deco {
+    position: relative;
+    align-self: end;
+    height: 70%;
+    width: 20%;
+    max-width: 300px;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* Arrow 1 */
+.landing-bottomleft_deco:before {
+  position: absolute;
+  left: 20%;
+  bottom: -11px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  transform: rotateZ(-45deg);
+} 
+
+/* Arrow 2 */
+.landing-bottomleft_deco:after {
+  position: absolute;
+  left: 40%;
+  bottom: -11px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  transform: rotateZ(-45deg);
+} 
+
+/* Arrow 3 - just added a span! */
+.landing-bottomleft_deco span:before {
+  position: absolute;
+  left: 60%;
+  bottom: -11px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  transform: rotateZ(-45deg);
+} 
+
+
+/* stop paragraphs from growing */
+.width-wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+
+.width-wrapper p {
+  padding-left: 40px;
+}
+
+
+/* decoration for headers */
+.slash-deco {
+  position:relative;
+  z-index:1;
+}
+
+.slash-deco:before {
+  position: absolute;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/95802/geenay-abouth2-deco.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: -5px;
+  top: -25%;
+  bottom: -10px;
+  content: "";
+  width: 25px;
+  height: 200%;
+  z-index:-1;
+} 
+
+
+/* colorw */
+.gray    { color: #F4F4F4 }
+.graybg  { background-color: #F4F4F4; }
+.gray2   { color: #8A8686; }
+.graybg2 { background-color: #8A8686; }
+.pink    { color: #FF87A3; }
+.pinkbg  { background-color: #FF87A3; }
+.dark    { color: #302D2D; }
+.darkbg  { background-color: #302D2D; }
+
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  color: #ffffff;
+}
+
+footer h1 {
+  font-size: 42px;
+  line-height: 1;
+  max-width: 150px
+}
+
+
+footer img {
+  width: 100%;
+  max-width: 30px;
+}
+
+footer .social-wrapper{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap:5vw;
+}
+
+
+
+/* note */
+.note {
+  margin: 30px 0;
+  padding: 30px;
+  outline: solid 1px #FF87A3;
+}
+</style>
+<section class="landing-hero-wrapper">
+  <div class="landinghero">
+    <div class="landinghero-bg pinkbg"></div>
+    <div class="landinghero-content">
+      <h1>Story</h1>
+      <span>
+        <h3><3 <hr></h3>
+        <h2>List</h2>
+        <section class="graybg">
+  <div class="width-wrapper">
+    <h2 class="slash-deco">About Us</h2>
+    <ul>
+     Good Day!
+  Welcome to my site,technology is innovating , it connect us.
+      Here in my "Story List" site contains your sign up information
+      before you can proceed to stories ......A BIG thanks <br>
+      CREATOR<br>
+     -FRENZY MAGBATO<br>
+    ---------------->Contact Information<----------<br>
+      FACEBOOK: Frenzy Camille Magbato <br>
+      GMAIL: magbatofrenzycamille@gmail.com<BR>
+      INSTAGRAM: gorgeousfrenzy1315<br>
+
+   
+
+    </ul>
+  </div>
+</section>
+      </span>
+      <div class="landing-bottomleft_deco"><span></span></div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  
+      </p>
+  </div>
+</section>
+<footer class="darkbg">
+  <h1 class>Register Now!</h1>
+  <div class="social-wrapper">
+     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/95802/twitter_white.svg" alt="Twitter">
+     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/95802/insta_white.svg" alt="Instagram">
+  </div>
+</footer>
+
+
+
+<!-- figma file for reference -->
+<!-- https://www.figma.com/file/XwL82iEuTj2Ys711y8Y3tC/Group-Session-Layout-Geenay-La?node-id=1014%3A36 -->

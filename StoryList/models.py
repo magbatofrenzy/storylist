@@ -12,7 +12,7 @@ class Reader(models.Model):
 
 class Category(models.Model):
 	nCategory = models.TextField(default='')
-	NewReader = models.ForeignKey(Reader, default=None, on_delete=models.PROTECT)
+	newreader = models.ForeignKey(Reader, default=None, on_delete=models.CASCADE)
 
 	class meta: 	
 		db_table = "category"
@@ -20,21 +20,21 @@ class Category(models.Model):
 class Stories(models.Model):
 	nTitle = models.TextField(default='')
 	nAuthor = models.TextField(default='')
-	Category = models.ForeignKey(Category, default=None, on_delete=models.PROTECT)
+	category = models.ForeignKey(Category, default=None, on_delete=models.CASCADE)
     	
 	class meta:
 		db_table = "stories"
      
 class List(models.Model):
 	Newreader = models.DateTimeField(default='')             
-	Condition = models.ForeignKey(Stories, default=None, on_delete=models.PROTECT)
+	condition = models.ForeignKey(Stories, default=None, on_delete=models.CASCADE)
 	
 	class meta:
     		db_table = "list"
 
 class Remarks(models.Model):
 	finished = models.TextField(default='')
-	unfinished = models.ForeignKey(List, default=None, on_delete=models.PROTECT)
+	unfinished = models.ForeignKey(List, default=None, on_delete=models.CASCADE)
 	
 	class meta: 	
 		db_table = "remarks"
